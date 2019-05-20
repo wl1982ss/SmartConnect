@@ -8,6 +8,7 @@ import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
@@ -72,6 +73,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mAddressImg = (ImageButton) findViewById(R.id.id_tab_address_img);
         mSettingImg = (ImageButton) findViewById(R.id.id_tab_setting_img);
 
+        // 获取到四个Tab
+        LayoutInflater inflater = LayoutInflater.from(this);
+        View    tab1    =   inflater.inflate(R.layout.tab1, null);
+        View    tab2    =   inflater.inflate(R.layout.tab2, null);
+        View    tab3    =   inflater.inflate(R.layout.tab3,null);
+        View    tab4    =   inflater.inflate(R.layout.tab4, null);
+
+        // 将四个Tab添加到集合中
+        mTabs.add(tab1);
+        mTabs.add(tab2);
+        mTabs.add(tab3);
+        mTabs.add(tab4);
     }
 
     private void initDatas() {
